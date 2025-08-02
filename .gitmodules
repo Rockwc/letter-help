@@ -1,0 +1,3 @@
+[submodule "letter-admin-pc"]
+	path = letter-admin-pc
+	url = https://github.com/Rockwc/letter-admin-pc.git
