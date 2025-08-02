@@ -1,0 +1,85 @@
+# 子模块管理 Makefile - Windows版本
+# 使用方法: make -f Makefile.windows [目标]
+
+.PHONY: help init update status pull push commit add log branch clean
+
+# 默认目标
+help:
+	@echo 子模块管理命令:
+	@echo   make -f Makefile.windows init      - 初始化所有子模块
+	@echo   make -f Makefile.windows update    - 更新所有子模块
+	@echo   make -f Makefile.windows status    - 查看子模块状态
+	@echo   make -f Makefile.windows pull      - 拉取子模块代码
+	@echo   make -f Makefile.windows push      - 推送子模块代码
+	@echo   make -f Makefile.windows commit    - 提交子模块更改
+	@echo   make -f Makefile.windows add       - 添加文件到子模块
+	@echo   make -f Makefile.windows log       - 查看子模块日志
+	@echo   make -f Makefile.windows branch    - 查看子模块分支
+	@echo   make -f Makefile.windows clean     - 清理子模块
+	@echo.
+	@echo 特定子模块操作:
+	@echo   make -f Makefile.windows admin-pc-update  - 更新admin-pc子模块
+	@echo   make -f Makefile.windows admin-pc-push    - 推送admin-pc子模块
+	@echo   make -f Makefile.windows admin-pc-commit  - 提交admin-pc更改
+
+# 初始化子模块
+init:
+	@scripts\submodule-manager.bat init
+
+# 更新所有子模块
+update:
+	@scripts\submodule-manager.bat update
+
+# 查看子模块状态
+status:
+	@scripts\submodule-manager.bat status
+
+# 拉取子模块代码
+pull:
+	@scripts\submodule-manager.bat pull
+
+# 推送子模块代码
+push:
+	@scripts\submodule-manager.bat push
+
+# 提交子模块更改
+commit:
+	@scripts\submodule-manager.bat commit
+
+# 添加文件到子模块
+add:
+	@scripts\submodule-manager.bat add
+
+# 查看子模块日志
+log:
+	@scripts\submodule-manager.bat log
+
+# 查看子模块分支
+branch:
+	@scripts\submodule-manager.bat branch
+
+# 清理子模块
+clean:
+	@scripts\submodule-manager.bat clean
+
+# admin-pc 子模块特定操作
+admin-pc-update:
+	@scripts\submodule-manager.bat update admin-pc
+
+admin-pc-push:
+	@scripts\submodule-manager.bat push admin-pc
+
+admin-pc-commit:
+	@scripts\submodule-manager.bat commit admin-pc
+
+admin-pc-status:
+	@scripts\submodule-manager.bat status
+
+admin-pc-log:
+	@scripts\submodule-manager.bat log admin-pc
+
+admin-pc-branch:
+	@scripts\submodule-manager.bat branch admin-pc
+
+admin-pc-clean:
+	@scripts\submodule-manager.bat clean admin-pc 
